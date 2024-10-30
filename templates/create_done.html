@@ -3,12 +3,10 @@
 {% block contents %}
   <div class="m-auto">
     <h3>登録完了</h3>
-    {% if message_type == "create_user" %}
-      <div>利用者情報の登録が完了しました。</div>
-    {% elif message_type == "create_goal" %}
-      <div>運動目標の登録が完了しました。</div>
-    {% elif message_type == "create_result" %}
-      <div>運動実績の登録が完了しました。</div>
+    {% if messages %}
+      {% for message in messages %}
+        <div>{{ message }}</div>
+      {% endfor %}
     {% else %}
       <div>登録が完了しました。</div>
     {% endif %}

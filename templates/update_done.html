@@ -3,10 +3,12 @@
 {% block contents %}
   <div class="m-auto">
     <h3>更新完了</h3>
-    {% if message_type == "update_goal" %}
-      <div>運動目標の更新が完了しました。</div>
-    {% elif message_type == "update_result" %}
-      <div>運動実績の更新が完了しました。</div>
+    {% if messages %}
+      {% for message in messages %}
+        <div>{{ message }}</div>
+      {% endfor %}
+    {% else %}
+      <div>更新しました。</div>
     {% endif %}
   </div>
 {% endblock %}
