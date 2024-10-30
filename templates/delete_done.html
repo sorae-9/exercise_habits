@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+
+{% block contents %}
+  <div class="m-auto">
+    <h3>削除完了</h3>
+    <div>運動情報を削除しました。</div>
+  </div>
+{% endblock %}
+
+{% block footer_contents %}
+  <div class="btn btn-primary back-btn" role="button">
+    <a href="{% url 'staffroom:exerciseHabitsRecord:exercise_list' %}">戻る</a>
+  </div>
+{% endblock %}

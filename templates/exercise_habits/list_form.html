@@ -1,0 +1,130 @@
+{% extends '../base.html' %}
+
+{% block contents %}
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th rowspan="2" class="vertical-align-middle">日付</th>
+          <th colspan="2" class="border-start">目標</th>
+          <th colspan="2" class="border-start border-end">実績</th>
+          <th rowspan="2"></th>
+          <th rowspan="2"></th>
+          <th rowspan="2"></th>
+        </tr>
+        <tr>
+          <th class="border-start">運動内容</th>
+          <th>回数 / 分</th>
+          <th class="border-start">運動内容</th>
+          <th class="border-end">回数 / 分</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for exercise in exercise_list %}
+          <tr>
+            <td rowspan="3" class="vertical-align-middle">{{exercise.exercise_date}}</td>
+            <td class="border-start">
+              {% if exercise.exercise_goal_1 == None %}
+                -
+              {% else %}
+                {{exercise.exercise_goal_1}}
+              {% endif %}
+            </td>
+            <td>
+              {% if exercise.goal_count_minutes_1 == None %}
+                -
+              {% else %}
+                {{exercise.goal_count_minutes_1}}
+              {% endif %}
+            </td>
+            <td class="border-start">
+              {% if exercise.exercise_result_1 == None %}
+                -
+              {% else %}
+                {{exercise.exercise_result_1}}
+              {% endif %}
+            </td>
+            <td>
+              {% if exercise.result_count_minutes_1 == None %}
+                -
+              {% else %}
+                {{exercise.result_count_minutes_1}}
+              {% endif %}
+              {{exercisresult_count_minutes_1e.result_count_minutes_1}}
+            </td>
+            <td rowspan="3" class="vertical-align-middle border-start">
+              <a href="{% url 'staffroom:exerciseHabitsRecord:update_goal' exercise.pk %}">目標詳細へ</a>
+            </td>
+            <td rowspan="3" class="vertical-align-middle border-start">
+              <a href="{% url 'staffroom:exerciseHabitsRecord:update_result' exercise.pk %}">実績詳細へ</a>
+            </td>
+            <td rowspan="3" class="vertical-align-middle border-start">
+              <a href="{% url 'staffroom:exerciseHabitsRecord:delete_exercise' exercise.pk %}">削除</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-start">
+              {% if exercise.exercise_goal_2 == None %}
+                -
+              {% else %}
+                {{exercise.exercise_goal_2}}
+              {% endif %}
+            </td>
+            <td>
+              {% if exercise.goal_count_minutes_2 == None %}
+                -
+              {% else %}
+                {{exercise.goal_count_minutes_2}}
+              {% endif %}
+            </td>
+            <td class="border-start">
+              {% if exercise.exercise_result_2 == None %}
+                -
+              {% else %}
+                {{exercise.exercise_result_2}}
+              {% endif %}
+            </td>
+            <td>
+              {% if exercise.result_count_minutes_2 == None %}
+                -
+              {% else %}
+                {{exercise.result_count_minutes_2}}
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="border-start">
+              {% if exercise.exercise_goal_3 == None %}
+                -
+              {% else %}
+                {{exercise.exercise_goal_3}}
+              {% endif %}
+            </td>
+            <td>
+              {% if exercise.goal_count_minutes_3 == None %}
+                -
+              {% else %}
+                {{exercise.goal_count_minutes_3}}
+              {% endif %}
+            </td>
+            <td class="border-start">
+              {% if exercise.exercise_result_3 == None %}
+                -
+              {% else %}
+                {{exercise.exercise_result_3}}
+              {% endif %}
+            </td>
+            <td>
+              {% if exercise.result_count_minutes_3 == None %}
+                -
+              {% else %}
+                {{exercise.result_count_minutes_3}}
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+html {
+  background-color: #dcdcdc;
+}
+
+body {
+  width: 70%;
+  min-width: 500px;
+  margin: auto;
+}
+
+.content-height {
+  height: calc(100% - 125.6px);
+  overflow-y: scroll;
+}
+
+.footer {
+  height: 100%;
+}
+
+.btn {
+  width: 100px;
+}
+
+.back-btn > a,
+.delete-btn > a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.table > tbody > tr > th {
+  width: 140px;
+  background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity));
+}
+
+.user-title,
+.user-table {
+  width: 300px;
+  margin: auto;
+}
+
+.goal-title,
+.result-title,
+.goal-table,
+.result-table {
+  width: 500px;
+  margin: auto;
+}
+
+.delete-div {
+  width: 300px;
+}
+
+#userList {
+  width: 500px;
+  margin: auto;
+}
+
+.vertical-align-middle {
+  vertical-align: middle
+}

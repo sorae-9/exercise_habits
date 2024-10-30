@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block contents %}
+  <div class="m-auto">
+    <h3>登録完了</h3>
+    {% if message_type == "create_user" %}
+      <div>利用者情報の登録が完了しました。</div>
+    {% elif message_type == "create_goal" %}
+      <div>運動目標の登録が完了しました。</div>
+    {% elif message_type == "create_result" %}
+      <div>運動実績の登録が完了しました。</div>
+    {% else %}
+      <div>登録が完了しました。</div>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block footer_contents %}
+  <div class="btn btn-primary back-btn" role="button">
+    <a href="{% url 'staffroom:exerciseHabitsRecord:exercise_list' %}">戻る</a>
+  </div>
+{% endblock %}
